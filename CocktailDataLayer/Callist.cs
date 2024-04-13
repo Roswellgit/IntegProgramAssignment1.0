@@ -1,11 +1,15 @@
 ﻿using CocktailModel;
-using CocktailBusinessLayer;
 
 namespace CocktailDataLayer
 {
     public class Callist
     {
         List<Calbum> Drinktionary = new List<Calbum>();
+
+        public Callist()
+        {
+            Drinks();
+        }
         public void Drinks()
         {
             Calbum one = new Calbum
@@ -64,32 +68,12 @@ namespace CocktailDataLayer
             };
 
             Drinktionary.Add(five);
+        }
 
-            CLib call = new CLib();
 
-            int drinknumber = Convert.ToInt32(Console.ReadLine());
-            switch (drinknumber)
-            {
-                case 1:
-                    call.ShowHistory(one);
-                    break;
-                case 2:
-                    call.ShowHistory(two);
-                    break;
-                case 3:
-                    call.ShowHistory(three);
-                    break;
-                case 4:
-                    call.ShowHistory(four);
-                    break;
-                case 5:
-                    call.ShowHistory(five);
-                    break;
-                default:
-                    Console.WriteLine("UNIDENTIFIED DRINK NUMBER");
-                    break;
-            }
-
+        public List<Calbum> GetDrinktionary()
+        {
+            return Drinktionary;
         }
     }
 }

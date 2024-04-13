@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocktailUI", "IntegProgramAssignment1.0\CocktailUI.csproj", "{FAB5D408-2B2B-4072-BE7D-4F9ACC4402A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CocktailUI", "IntegProgramAssignment1.0\CocktailUI.csproj", "{FAB5D408-2B2B-4072-BE7D-4F9ACC4402A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocktailBusinessLayer", "CocktailBusinessLayer\CocktailBusinessLayer.csproj", "{5526EEAB-4C78-4405-88DF-73BF34CA6F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CocktailBusinessLayer", "CocktailBusinessLayer\CocktailBusinessLayer.csproj", "{5526EEAB-4C78-4405-88DF-73BF34CA6F6E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75395585-AECA-47D2-9C5B-3BE7903DDD61} = {75395585-AECA-47D2-9C5B-3BE7903DDD61}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocktailDataLayer", "CocktailDataLayer\CocktailDataLayer.csproj", "{75395585-AECA-47D2-9C5B-3BE7903DDD61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CocktailDataLayer", "CocktailDataLayer\CocktailDataLayer.csproj", "{75395585-AECA-47D2-9C5B-3BE7903DDD61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocktailModel", "CocktailModel\CocktailModel.csproj", "{1D1969F5-0571-4994-8764-65D8234276DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CocktailModel", "CocktailModel\CocktailModel.csproj", "{1D1969F5-0571-4994-8764-65D8234276DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

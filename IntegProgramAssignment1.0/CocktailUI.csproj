@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CocktailBusinessLayer\CocktailBusinessLayer.csproj" />
     <ProjectReference Include="..\CocktailDataLayer\CocktailDataLayer.csproj" />
   </ItemGroup>
 
