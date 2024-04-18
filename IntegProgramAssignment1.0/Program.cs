@@ -21,51 +21,127 @@ namespace IntegProgramAssignment1._0
 
         static void Main(string[] args)
         {
-            
+           
             CLib businessServices = new CLib();
             List<Calbum> Drinktionary = businessServices.GetDrinktionary();
+  
 
-            Console.WriteLine("WELCOME TO VA-11-HALL-A");
-            Console.WriteLine("Choose your Drink");
-            Console.WriteLine("------------------");
-            Console.WriteLine("1. Bad Touch");
-            Console.WriteLine("2. Fluffy Dream");
-            Console.WriteLine("3. Gut Punch");
-            Console.WriteLine("4. Cobalt Velvet");
-            Console.WriteLine("5. Mercuryblast");
-            Console.WriteLine("------------------");
+            Console.WriteLine("Please Choose an Option");
+            Console.WriteLine("1.Drinktionary");
+            Console.WriteLine("2.Add to Drinktionary");
+            Console.WriteLine("3.Remove from Drinktionary");
 
-
-
-
-            int drinknumber = Convert.ToInt32(Console.ReadLine());
             
-            switch (drinknumber)
-            {
-                case 1:
-                    ShowHistory(Drinktionary[0]);
-                    break;
-                case 2:
-                    ShowHistory(Drinktionary[1]);
-                    break;
-                case 3:
-                    ShowHistory(Drinktionary[2]);
-                    break;
-                case 4:
-                    ShowHistory(Drinktionary[3]);
-                    break;
-                case 5:
-                    ShowHistory(Drinktionary[4]);
-                    break;
-                default:
-                    Console.WriteLine("UNIDENTIFIED DRINK NUMBER");
-                    break;
+            
+
+                int options = Convert.ToInt32(Console.ReadLine());
+
+
+
+                switch (options)
+
+                {
+                    case 1:
+
+                        Console.WriteLine("WELCOME TO VA-11-HALL-A");
+                        Console.WriteLine("Choose your Drink");
+                        Console.WriteLine("------------------");
+                        Console.WriteLine("1. Bad Touch");
+                        Console.WriteLine("2. Fluffy Dream");
+                        Console.WriteLine("3. Gut Punch");
+                        Console.WriteLine("4. Cobalt Velvet");
+                        Console.WriteLine("5. Mercuryblast");
+                        Console.WriteLine("------------------");
+
+                        int drinknumber = Convert.ToInt32(Console.ReadLine());
+                        switch (drinknumber)
+                        {
+                            case 1:
+                                ShowHistory(Drinktionary[0]);
+                                break;
+                            case 2:
+                                ShowHistory(Drinktionary[1]);
+                                break;
+                            case 3:
+                                ShowHistory(Drinktionary[2]);
+                                break;
+                            case 4:
+                                ShowHistory(Drinktionary[3]);
+                                break;
+                            case 5:
+                                ShowHistory(Drinktionary[4]);
+                                break;
+                            default:
+                                Console.WriteLine("UNIDENTIFIED DRINK NUMBER");
+                                break;
+                        }
+                        break;
+
+                    case 2:
+
+
+                        Calbum userip = new Calbum();
+
+                        Console.WriteLine("Enter Cocktail Name");
+                        userip.cname = Console.ReadLine();
+                        Console.WriteLine("Enter Prep");
+                        userip.prep = Console.ReadLine();
+                        Console.WriteLine("Enter Ingredients");
+                        userip.mainingredients = Console.ReadLine();
+                        Console.WriteLine("Enter Flavor");
+                        userip.flavor = Console.ReadLine();
+                        Console.WriteLine("Enter First Type");
+                        userip.type1 = Console.ReadLine();
+                        Console.WriteLine("Enter Second Type");
+                        userip.type2 = Console.ReadLine();
+
+                        ShowHistory(userip);
+                        break;
+                    case 3:
+
+                        int drinkdelete = Convert.ToInt32(Console.ReadLine());
+
+                        switch (drinkdelete)
+                        {
+                            case 1:
+                            businessServices.DeleteCocktail(Drinktionary[0]);
+                                break;
+                            case 2:
+                            businessServices.DeleteCocktail(Drinktionary[1]);
+                                break;
+                            case 3:
+                            businessServices.DeleteCocktail(Drinktionary[2]);
+                                break;
+                            case 4:
+                            businessServices.DeleteCocktail(Drinktionary[3]);
+                                break;
+                            case 5:
+                            businessServices.DeleteCocktail(Drinktionary[4]);
+                                break;
+                            default:
+                                Console.WriteLine("UNIDENTIFIED DRINK NUMBER");
+                                break;
+                        }
+                        break;
+
+                   
+                    default:
+                        Console.WriteLine("ERROR IN CHOOSING");
+                        break;
+
+
+                }
             }
 
 
 
+        
+           
+
+        }
+
 
         }
        
-    }
-}
+    
+
