@@ -20,16 +20,30 @@ namespace IntegProgramAssignment1._0
         }
         static void Main(string[] args)
         {
-           
+
             CLib businessServices = new CLib();
             List<Calbum> Drinktionary = businessServices.GetDrinktionary();
-  
 
-            Console.WriteLine("Please Choose an Option");
-            Console.WriteLine("1.Drinktionary");
-            Console.WriteLine("2.Add to Drinktionary");
-            Console.WriteLine("3.Remove from Drinktionary");
-          
+            Console.Write("Enter Username:  ");
+            string userID = Console.ReadLine();
+
+            Console.Write("Enter Password:  ");
+            string pass = Console.ReadLine();
+
+            Business veri = new Business();
+            bool result = veri.Verification(userID, pass);
+
+            if (result)
+            {
+
+
+                Console.WriteLine("WELCOME TO VA-11-HALL-A");
+                Console.WriteLine("Please Choose an Option");
+                Console.WriteLine("1.Drinktionary");
+                Console.WriteLine("2.Add to Drinktionary");
+                Console.WriteLine("3.Remove from Drinktionary");
+
+
                 int options = Convert.ToInt32(Console.ReadLine());
 
                 switch (options)
@@ -37,7 +51,7 @@ namespace IntegProgramAssignment1._0
                 {
                     case 1:
 
-                        Console.WriteLine("WELCOME TO VA-11-HALL-A");
+
                         Console.WriteLine("Choose your Drink");
                         Console.WriteLine("------------------");
                         Console.WriteLine("1. Bad Touch");
@@ -88,14 +102,14 @@ namespace IntegProgramAssignment1._0
                         Console.WriteLine("Enter Second Type");
                         userip.type2 = Console.ReadLine();
 
-                    ShowHistory(Drinktionary[0]);
-                    ShowHistory(Drinktionary[1]);
-                    ShowHistory(Drinktionary[2]);
-                    ShowHistory(Drinktionary[3]);
-                    ShowHistory(Drinktionary[4]);
-                    Console.WriteLine("\nHere's your added Drink!\n");
-                    ShowHistory(userip);
-                   
+                        ShowHistory(Drinktionary[0]);
+                        ShowHistory(Drinktionary[1]);
+                        ShowHistory(Drinktionary[2]);
+                        ShowHistory(Drinktionary[3]);
+                        ShowHistory(Drinktionary[4]);
+                        Console.WriteLine("\nHere's your added Drink!\n");
+                        ShowHistory(userip);
+
                         break;
                     case 3:
 
@@ -104,31 +118,31 @@ namespace IntegProgramAssignment1._0
                         switch (drinkdelete)
                         {
                             case 1:
-                            businessServices.DeleteCocktail(Drinktionary[0]);
-                            Console.WriteLine("The Cocktail has been Deleted");
+                                businessServices.DeleteCocktail(Drinktionary[0]);
+                                Console.WriteLine("The Cocktail has been Deleted");
                                 break;
                             case 2:
-                            businessServices.DeleteCocktail(Drinktionary[1]);
-                            Console.WriteLine("The Cocktail has been Deleted");
-                            break;
+                                businessServices.DeleteCocktail(Drinktionary[1]);
+                                Console.WriteLine("The Cocktail has been Deleted");
+                                break;
                             case 3:
-                            businessServices.DeleteCocktail(Drinktionary[2]);
-                            Console.WriteLine("The Cocktail has been Deleted");
-                            break;
+                                businessServices.DeleteCocktail(Drinktionary[2]);
+                                Console.WriteLine("The Cocktail has been Deleted");
+                                break;
                             case 4:
-                            businessServices.DeleteCocktail(Drinktionary[3]);
-                            Console.WriteLine("The Cocktail has been Deleted");
-                            break;
+                                businessServices.DeleteCocktail(Drinktionary[3]);
+                                Console.WriteLine("The Cocktail has been Deleted");
+                                break;
                             case 5:
-                            businessServices.DeleteCocktail(Drinktionary[4]);
-                            Console.WriteLine("The Cocktail has been Deleted");
-                            break;
+                                businessServices.DeleteCocktail(Drinktionary[4]);
+                                Console.WriteLine("The Cocktail has been Deleted");
+                                break;
                             default:
                                 Console.WriteLine("UNIDENTIFIED DRINK NUMBER");
                                 break;
                         }
                         break;
-                   
+
                     default:
                         Console.WriteLine("ERROR IN CHOOSING");
                         break;
@@ -137,15 +151,16 @@ namespace IntegProgramAssignment1._0
                 }
             }
 
+            else
+            {
+                Console.WriteLine("You are not a Registered User");
+            }
 
-
-        
-           
 
         }
 
 
-        }
-       
+    }
+}
     
 
